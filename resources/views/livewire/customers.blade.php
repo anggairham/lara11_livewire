@@ -1,6 +1,9 @@
 <div>
     <livewire:flash-message />
     <button wire:navigate href="customers/create" class="btn btn-sm btn-primary">Create</button>
+    <div class="col-auto">
+        <input type="text" wire:model.live.debounce.150ms="search" placeholder="Search User" class="form-control">
+    </div>
     <table class="table table-responsive table-bordered">
         <thead>
             <tr>
@@ -27,5 +30,5 @@
             @endforeach
         </tbody>
     </table>
-
+    {{ $customers->links() }}
 </div>
